@@ -1,6 +1,8 @@
 # FOCS
 Codebase for FOCS, a new method for inferring enhancer-promoter (E-P) links and for integrative analysis of E-P links
 
+Additional information about running FOCS can be found <a href="http://acgt.cs.tau.ac.il/focs/tutorial.html">here</a>
+
 # Getting FOCS database
 You can download the database <a href="http://acgt.cs.tau.ac.il/focs/download.html" target="_blank">here</a>.
 The database includes preprocessed RData files of ENCODE, Roadmap Epigenomics, FANTOM5, and GRO-seq:
@@ -23,10 +25,10 @@ Please make sure you have the following pre-installed R packages:
 * Matching
 * RColorBrewer
 * GenomicRanges
+* ggplot2
 
 # Running FOCS to infer E-P links
-Please note that you can run FOCS only under linux platform.
-
+Please note that you can run FOCS only under linux platform
 First create directories:
 1) mkdir focs
 2) cd focs
@@ -35,3 +37,5 @@ First create directories:
 5) mkdir tmp
 
 Copy the scripts in the R folder to ../focs/scripts/ folder
+Additional instructions are given within tutorial.R script file
+
