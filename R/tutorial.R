@@ -4,7 +4,15 @@
 
 ########################################## Note: Only works via R unix platform ##################################################
 
+## This is a line by line running tutorial. In order to to run a subset of lines please select them using shift and run using ctrl+R
+
+## You should have a folder named "focs" that contains the subfolders: "data", "scripts", and "tmp"
 setwd('../focs/')
+
+## Download FOCS database from http://acgt.cs.tau.ac.il/focs/download.html
+## You should download all files under the source's table (ENCODE, Roadmap, FANTOM5, GRO-seq) and the files
+## in the last table named "Additional data: analysis and external databases"
+## put all files under ./focs/data/ folder
 
 # load libraries
 cran_libs = c('pscl','MASS','parallel','AUC','glmnet','Matching','RColorBrewer')
