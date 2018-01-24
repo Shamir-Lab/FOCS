@@ -29,6 +29,7 @@ Please make sure you have the following pre-installed R packages:
 
 # Running FOCS to infer E-P links
 Please note that you can run FOCS only under linux platform
+
 First create directories:
 1) mkdir focs
 2) cd focs
@@ -37,5 +38,6 @@ First create directories:
 5) mkdir tmp
 
 Copy the scripts in the R folder to ../focs/scripts/ folder
+
 Additional instructions are given within tutorial.R script file
 
