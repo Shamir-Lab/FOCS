@@ -13,3 +13,23 @@ In addition the database includes external data for integrative analysis of E-P 
 1) ChIA-PET interactions mediated by POL2 of 4 cell types (MCF7, HCT-116, K562 and Hela-S3) taken from <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE39495" target="_blank">GSE39495</a>
 2) Genomic positions of GTEx eQTL data (V6 and V6p builds) taken from <a href="https://www.gtexportal.org/home/" target="_blank">GTEx Portal</a>
 
+# Dependencies
+Please make sure you have the following pre-installed R packages:
+* pscl
+* MASS
+* parallel
+* AUC
+* glmnet
+* Matching
+* RColorBrewer
+* GenomicRanges
+
+# Running FOCS to infer E-P links
+Please note that you can run the R scripts under R folder only under linux platform.
+First create directories:
+1) mkdir focs
+2) cd focs
+3) mkdir data
+4) mkdir scripts
+5) mkdir tmp
+Copy the scripts in the R folder to ../focs/scripts/ folder
