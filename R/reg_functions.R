@@ -406,3 +406,17 @@ getRsquared <- function(i,y,y_pred,...){
 	if(i%%100==0){print(paste("$$$$$$$$$$$$$$$$$$$$$$", i))}
 	return(cor(y,y_pred,method='pearson')**2)
 }
+
+#Get correlation values - either by Spearman or by Pearson (default)
+getCor <- function(i,y,y_pred,...){
+	if(i%%100==0){print(paste("$$$$$$$$$$$$$$$$$$$$$$", i))}
+	return(cor(y,y_pred,method='pearson'))
+}
+
+## proportional contribution r^2/R^2 (note that r is the Pearson coefficient)
+get_pearson_coef <- function(i,ind,r2,Mg_normalized,Me_normalized,g_to_e,...){
+	if(i%%100==0){print(paste("$$$$$$$$$$$$$$$$$$$$$$", i))}
+	regr_data_normalized = fetch_regr_data(ind,Mg_normalized,Me_normalized,g_to_e)
+	x_n = regr_data_normalized$x;y_n=regr_data_normalized$y
+	return((cor(x_n,y_n,method='pearson')**2)/r2)
+}
