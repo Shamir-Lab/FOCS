@@ -2,10 +2,20 @@
 ################################### Integrative analysis of E-P links ############################################################
 ##################################################################################################################################
 
+## This is a line by line running script. In order to to run a subset of lines please select them using shift and run using ctrl+R
 
+## You should have a folder named "focs" that contains the subfolders: "data", "scripts", and "tmp"
 setwd('../focs/')
 
-# load libraries
+## Download FOCS database from http://acgt.cs.tau.ac.il/focs/download.html
+## You should download all files under the source's table (ENCODE, Roadmap, FANTOM5, GRO-seq) and the files
+## in the last table named "Additional data: analysis and external databases"
+## put all files under ./focs/data/ folder
+
+## ENCODE RData files for running FOCS can be downloaded from: http://acgt.cs.tau.ac.il/focs/data/data.zip
+## Unpack the zip file into focs/data folder
+
+# load libraries - make sure you pre-installed these packages
 bioconductor_libs = c('GenomicRanges','rtracklayer','GenomicInteractions')
 for (p in (c(bioconductor_libs))){library(p,character.only=T)}
 
@@ -19,7 +29,7 @@ data_directory = '../data/'
 script_directory = '../scripts/'
 tmp_directory = '../tmp/'
 # data types - groseq, fantom, encode, roadmap
-data_type <- 'groseq'
+data_type <- 'encode'
 
 # Enhancer genomic positions
 enh.bs <- get(load(paste(data_directory,data_type,'.enh.pos.RData',sep='')))
@@ -178,10 +188,3 @@ eqtl_annot <- sapply(seq_len(length(ep_gene)),function(i) find_eqtl_annot(enh.bs
 									unique(sig_pairs.gr[unlist(snp.inds.gencode[gene_ep_list[[i]]$ens_id])]),win.size=500))
 
 # What are the rs_id (dbSNP142) of the overlapping SNPs - explained in GRO-seq
-
-
-
-
-
-
-
